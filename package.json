@@ -1,0 +1,23 @@
+{
+    "name": "platformjs",
+    "version": "1.0.0",
+    "description": "Retrieve a platform on which we are running.",
+    "main": "platform.js",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint --cache platform.js",
+        "l": "npm run lint",
+        "test-only": "./node_modules/.bin/mocha -i --grep @retired",
+        "test": "npm run lint && npm run test-only",
+        "t": "npm run test"
+    },
+    "keywords": [
+        "platform"
+    ],
+    "author": "Pavel Saman",
+    "license": "MIT",
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "eslint": "^7.17.0",
+        "mocha": "^8.2.1"
+    }
+}
