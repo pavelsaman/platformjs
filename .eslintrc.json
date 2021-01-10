@@ -8,6 +8,7 @@
     "ignorePatterns": [        
     ],
     "extends": "eslint:recommended",
+    "plugins": ["import"],
     "parserOptions": {
         "ecmaVersion": 11,
         "sourceType": "module"
@@ -28,13 +29,20 @@
         "complexity": ["error", 10],
         "default-case": "error",
         "default-case-last": "error",     
-        "default-param-last": "warn",
+        "default-param-last": "error",
         "dot-location": ["error", "property"],
         "grouped-accessor-pairs": "error",
         "no-shadow": "error",
         "no-label-var": "error",
         "no-use-before-define": "error",
-        "no-extra-parens": ["warn", "all"],
+        "no-extra-parens": [
+            "warn",
+            "all",
+            {
+                "enforceForArrowConditionals": false,
+                "conditionalAssign": false
+            }
+        ],
         "no-template-curly-in-string": "error",
         "no-unreachable-loop": "error",
         "eqeqeq": ["error", "always"],
@@ -185,6 +193,13 @@
         "template-curly-spacing": ["warn", "never"],
         "yield-star-spacing": ["error", { "before": true, "after": false }],
         "arrow-parens": ["warn", "as-needed"],
+        "arrow-body-style": [
+            "warn",
+            "as-needed",
+            {
+                "requireReturnForObjectLiteral": true
+            }
+        ],
         "arrow-spacing": ["warn", { "before": true, "after": true }],
         "array-bracket-spacing": ["warn", "never"],
         "block-spacing": ["warn", "always"],
@@ -287,6 +302,15 @@
             }
         ],
         "prefer-arrow-callback": "warn",
-        "prefer-destructuring": "warn"
+        "prefer-destructuring": "warn",
+        "prefer-template": "warn",
+        "no-useless-escape": "warn",
+        "prefer-rest-params": "warn",
+        "function-paren-newline": ["warn", "multiline"],
+        "no-dupe-class-members": "error",
+        "import/no-mutable-exports": "error",
+        "import/first": "warn",
+        "object-curly-newline": ["warn", { "multiline": true }],
+        "import/no-webpack-loader-syntax": "error"
     }
 }

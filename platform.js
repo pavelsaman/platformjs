@@ -19,17 +19,9 @@ const architecture = () => {
 
 const isWindows = () => platform() === 'winn32';
 const isNotWindows = () => !isWindows();
-const eol = () => {
-    return isWindows() ? '\r\n' : '\n';
-};
-
-const is64bit = () => {
-    return /64/.test(architecture());
-};
-
-const is32bit = () => {
-    return /32/.test(architecture());
-};
+const eol = () => (isWindows() ? '\r\n' : '\n');
+const is64bit = () => /64/.test(architecture());
+const is32bit = () => /32/.test(architecture());
 
 module.exports = {
     platform,
