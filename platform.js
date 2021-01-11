@@ -17,6 +17,11 @@ const architecture = () => {
     return process.arch;
 };
 
+const nodeVersion = () => {
+    _exist('version');
+    return process.version;
+};
+
 const isWindows = () => platform() === 'winn32';
 const isNotWindows = () => !isWindows();
 const eol = () => (isWindows() ? '\r\n' : '\n');
@@ -33,5 +38,6 @@ module.exports = {
     is64bit,
     is32bit,
     is64: is64bit,
-    is32: is32bit
+    is32: is32bit,
+    nodeVersion
 };
